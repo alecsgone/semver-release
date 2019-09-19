@@ -53,3 +53,11 @@ test('undefined for null and empty string on the array of commits', () => {
   expect(versionCalculator(commits)).toBe(undefined)
   expect(console.error).toHaveBeenCalledTimes(1)
 })
+
+test('undefined if there are no conventional commits in the array', () => {
+  const commits = [
+    '4123421b fox: all the time',
+  ]
+
+  expect(versionCalculator(commits)).toBe(undefined)
+})
